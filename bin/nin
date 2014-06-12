@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+require(__dirname + '/../lib/commands.js').forEach(function(cmdimpl) {
+  cmdimpl.register(program);
+});
+
+var result = program.parse(process.argv);
+
+// Check whether we have at least one subcmd found.
+//
+// Sadly currently we have to do in this vague way: checking the result.args array
+// for object. This method is got by observing console.log(result). Maybe there is
+// better way out there.
+var foundCmd = false;
+for (var i=0; i<result.args.length; i++) {
+  if (typeof result.args[i] === 'object') {
+    foundCmd = true;
+  }
+}
+
+if (!foundCmd || !result.args.length) {
+  program.help();
+}
+

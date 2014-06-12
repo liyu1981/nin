@@ -1,0 +1,25 @@
+{
+  "name": "nin",
+  "version": "0.1.0",
+  "description": "Nodejs INstaller, which is the missing deploy tool for nodejs platform.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:liyu1981/rask.git"
+  },
+  "keywords": [
+    "nodejs",
+    "installer"
+  ],
+  "author": "LI, Yu",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/liyu1981/nin/issues"
+  },
+  "dependencies": {
+    "commander": "~2.2.0",
+    "npm": "~1.4.15",
+    "underscore": "~1.6.0",
+    "log4js": "~0.6.14"
+  }
+}
