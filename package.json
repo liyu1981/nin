@@ -1,7 +1,7 @@
 {
   "name": "nin",
   "version": "0.1.0",
-  "description": "Nodejs INstaller, which is the missing deploy tool for nodejs platform.",
+  "description": "Nodejs INstaller, the missing deploy tool for nodejs.",
   "main": "index.js",
   "repository": {
     "type": "git",
