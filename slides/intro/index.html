@@ -45,6 +45,14 @@
   text-transform: none;
 }
 
+code {
+  font-family: Consolas,monospace;
+}
+
+li {
+  line-height: 120% !important;
+}
+
 .popbox {
   margin: 0px 10% !important;
   background-color: rgba(0,0,0,0.25);
@@ -138,14 +146,48 @@ npm install /path/to/my/app -g
           </code></pre>
           </div>
           <div class="fragment fade-in">
-          Only mess my local or global <code>node_modules</code>. <br> Nothing happens, seriously.
+            <p><br>
+            Admit it, usually some or part of the problems are solved.<br>
+            <br>
+            <p class="fragment fade-in"><small>And the 2nd one could mess up my global <code>node_modules</code>.</small></p>
+            </p>
           </div>
         </section>
 
         <section>
+          <h2>So I need a new tool to ...</h2>
+          <div>
+            <ul>
+              <li class="fragment fade-in">npm install my app
+              <li class="fragment fade-in">setup dirs of my app, and other stuff (such as conf files)
+              <li class="fragment fade-in">start my app with right scripts and parameters
+            </ul>
+          </div>
+          <br>
+          <br>
+          <div class="fragment fade-in">
+            <h2>That's what <a>nin</a> can do.</h2>
+          </div>
         </section>
 
-			</div>
+       <section>
+          <h2>Typical <a>nin</a> usage</h2>
+          <div class="fragment fade-in">
+            <pre><code data-trim class="bash">
+mkdir -p /path/to/deploy/my/app
+cd /path/to/deploy/my/app
+nin install /path/to/my/app
+nin start my-app-name
+            </code></pre>
+          </div>
+          <div class="fragment fade-in"><small>
+              Of couse, before that I have to install nin with
+            <pre><code data-trim class="bash">
+npm install nin -g
+            </code></pre>
+          </small></div>
+        </div>
+      </section>
 
 		</div>
 
