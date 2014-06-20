@@ -70,125 +70,276 @@ li {
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background="">
-          <h1>nin</h1>
-          <p><i>N</i>odejs <i>IN</i>staller</p>
-          <p>The missing nodejs app deploy tool.</p>
-          <br>
-					<h3>An Introduction</h3>
-          <br>
-					<p>
-						<small>Created by <a href="https://github.com/liyu1981">LI, Yu</a></small>
-					</p>
-				</section>
 
-        <section>
-          <h2>Deploy nodejs app</h2>
-          <p>a <i><a>trivial</a></i> but <i><a>bother</a></i> problem.</p>
-        </section>
+<section data-background="">
+  <h1>nin</h1>
+  <p><i>N</i>odejs <i>IN</i>staller</p>
+  <p>The missing nodejs app deploy tool.</p>
+  <br>
+	<h3>An Introduction</h3>
+  <br>
+	<p>
+		<small>Created by <a href="https://github.com/liyu1981">LI, Yu</a></small>
+	</p>
+</section>
 
-        <section>
-          <h2>Trivial?</h2>
-          <p>Usually only need to copy all files to deploy site.</p>
-          <pre><code data-trim class="bash">
+<section>
+  <h2>Deploy nodejs app</h2>
+  <p>a <i><a>trivial</a></i> but <i><a>bother</a></i> problem.</p>
+</section>
+
+<section>
+  <h2>Trivial?</h2>
+  <p>Usually only need to copy all files to deploy site.</p>
+  <pre><code data-trim class="bash">
 cd deploy_site
 cp /path/to/my/app/dev/* deploy_site/
-          </code></pre>
-          <p class="fragment fade-in">Really done?</p>
-        </section>
+  </code></pre>
+  <p class="fragment fade-in">Really done?</p>
+</section>
 
-        <section>
-          <h2>Bother?</h2>
-          <div>
-          <p>Oh, sorry, forget to generate some conf files ...</p>
-          <pre><code data-trim class="bash">
+<section>
+  <h2>Bother?</h2>
+  <div>
+  <p>Oh, sorry, forget to generate some conf files ...</p>
+  <pre><code data-trim class="bash">
 cd deploy_site
 cat ./myexamples/my.conf.example | sed -e 's/foo/bar/g' > ./etc/my.conf
-          </code></pre>
-          </div>
-          <div class="fragment fade-in">
-          <p>Sorry, and some dirs ...</p>
-          <pre><code data-trim class="bash">
+  </code></pre>
+  </div>
+  <div class="fragment fade-in">
+  <p>Sorry, and some dirs ...</p>
+  <pre><code data-trim class="bash">
 mkdir -p ./var
 mkdir -p ./log
-          </code></pre>
-          </div>
-          <div class="fragment fade-in">
-          <p>Sor..., and some npm pkgs, I forgot I have cleaned there ...</p>
-          <pre><code data-trim class="bash">
+  </code></pre>
+  </div>
+  <div class="fragment fade-in">
+  <p>Sor..., and some npm pkgs, I forgot I have cleaned there ...</p>
+  <pre><code data-trim class="bash">
 npm install
-          </code></pre>
-          </div>
-          <div class="fragment fade-in">
-          <p>Finally, ..., and which's the main js file? </p>
-          <pre><code data-trim class="bash">
-ping someone
-          </code></pre>
-          </div>
-          <div class="fragment fade-in">
-          And what if this is going to happen another 100 times?
-          </div>
-        </section>
+  </code></pre>
+  </div>
+  <div class="fragment fade-in">
+  <p>Wait, ..., and which's the main js file? </p>
+  <pre><code data-trim class="bash">
+sudo wall -n "somebody know which is my app's main js file?"
+  </code></pre>
+  </div>
+  <div class="fragment fade-in">
+  And what if this is going to happen another 100 times?
+  </div>
+</section>
 
-        <section>
-          <h2>We have <a>npm</a>, right?</h2>
-          <p class="fragment fade-in">Can it solve my problem?</p>
-          <div class="fragment fade-in">
-          <p>Try this ?</p>
-          <pre><code data-trim class="bash">
+<section>
+  <h2>We have <a>npm</a>, right?</h2>
+  <p class="fragment fade-in">Can it solve my problem?</p>
+  <div class="fragment fade-in">
+  <p>Try this ?</p>
+  <pre><code data-trim class="bash">
 npm install /path/to/my/app
-          </code></pre>
-          </div>
-          <div class="fragment fade-in">
-          <p>Or this ? </p>
-          <pre><code data-trim class="bash">
+  </code></pre>
+  </div>
+  <div class="fragment fade-in">
+  <p>Or this ? </p>
+  <pre><code data-trim class="bash">
 npm install /path/to/my/app -g
-          </code></pre>
-          </div>
-          <div class="fragment fade-in">
-            <p><br>
-            Admit it, usually some or part of the problems are solved.<br>
-            <br>
-            <p class="fragment fade-in"><small>And the 2nd one could mess up my global <code>node_modules</code>.</small></p>
-            </p>
-          </div>
-        </section>
+  </code></pre>
+  </div>
+  <div class="fragment fade-in">
+    <p><br>
+    Admit it, usually some or part of the problems are solved.<br>
+    <br>
+    <p class="fragment fade-in"><small>And the 2nd one could mess up my global <code>node_modules</code>.</small></p>
+    </p>
+  </div>
+</section>
 
-        <section>
-          <h2>So I need a new tool to ...</h2>
-          <div>
-            <ul>
-              <li class="fragment fade-in">npm install my app
-              <li class="fragment fade-in">setup dirs of my app, and other stuff (such as conf files)
-              <li class="fragment fade-in">start my app with right scripts and parameters
-            </ul>
-          </div>
-          <br>
-          <br>
-          <div class="fragment fade-in">
-            <h2>That's what <a>nin</a> can do.</h2>
-          </div>
-        </section>
+<section>
+  <h2>So I need a new tool to ...</h2>
+  <div>
+    <ul>
+      <li class="fragment fade-in">npm install my app
+      <li class="fragment fade-in">setup dirs of my app, and other stuff (such as conf files)
+      <li class="fragment fade-in">start my app with right scripts and parameters
+    </ul>
+  </div>
+  <br>
+  <br>
+  <div class="fragment fade-in">
+    <h2>That's what <a>nin</a> can do.</h2>
+  </div>
+</section>
 
-       <section>
-          <h2>Typical <a>nin</a> usage</h2>
-          <div class="fragment fade-in">
-            <pre><code data-trim class="bash">
-mkdir -p /path/to/deploy/my/app
-cd /path/to/deploy/my/app
-nin install /path/to/my/app
-nin start my-app-name
-            </code></pre>
-          </div>
-          <div class="fragment fade-in"><small>
-              Of couse, before that I have to install nin with
-            <pre><code data-trim class="bash">
+<section>
+  <h2>So, <a>nin</a>...</h2>
+  <div class="fragment fade-in">
+    Where is it? <br>
+    <small>
+    <ul>
+      <li> npm: <a href="https://www.npmjs.org/package/nin" target="_blank">https://www.npmjs.org/package/nin</a>
+      <li> github: <a href="https://github.com/liyu1981/nin" target="_blank">https://github.com/liyu1981/nin</a>
+    </ul>
+    </small>
+  </div>
+  <br>
+  <div class="fragment fade-in">
+   install it
+   <pre><code data-trim class="bash">
 npm install nin -g
-            </code></pre>
-          </small></div>
-        </div>
-      </section>
+   </code></pre>
+  </div>
+</section>
 
+<section>
+   <h2>Try it!</h2>
+   <div class="fragment fade-in">
+     <pre><code data-trim class="bash">
+mkdir -p ~/nintest
+cd ~/nintest
+nin install git@github.com:liyu1981/nin-example.git
+nin start nin-example
+    </code></pre>
+    After start, go to <code>http://localhost:12345</code> <br>
+    to see the <a title="actually a simple webchat, find it?">nin-example app</a>.
+   </div>
+</section>
+
+<section>
+  <h2>Current command summary</h2>
+  <pre><code data-trim class="bash">
+  Usage: nin [options] [command]
+
+  Commands:
+
+    deploy <pkg>           Install your app.
+      > <pkg> can be any llegal npm pkg names.
+      > Ref https://www.npmjs.org/doc/cli/npm-install.html
+
+    install <pkg>          Install your app.
+      > This equals deploy then setup.
+      > <pkg> can be any llegal npm pkg names.
+      > Ref https://www.npmjs.org/doc/cli/npm-install.html
+
+    setup <pkgname>        Setup your app.
+      > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/node_modules/
+
+    start <pkgname>        Start your app.
+      > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/node_modules/
+      > pid file will write to var/<pkgname>
+
+    stop <pkgname>         Stop your app.
+      > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/node_modules/
+
+    version                Show version info.
+
+  Options:
+
+    -h, --help   output usage information
+    -q, --quiet  turn on quiet mode
+  </code></pre>
+  <small>For updated version, just <code>nin↵</code></small>
+</section>
+
+<section>
+  <h2>How to make my app ready for <a>nin</a>?</h2>
+  <p>Just a nin.json file away.</p>
+  <pre><code data-trim class="json">
+{
+  "setup": [
+    {
+      "type": "bash",
+      "content": "op/setup.sh"
+    }
+  ],
+  "start": [
+    {
+      "type": "bash",
+      "content": "op/start.sh"
+    }
+  ],
+  "stop": [
+    {
+      "type": "bash",
+      "content": "op/stop.sh"
+    }
+  ]
+}
+  </code></pre>
+</section>
+
+<section>
+  <h2>... more elaboration</h2>
+  <ul>
+    <li class="fragment fade-in">nin.json is basically json, same as package.json.
+    <li class="fragment fade-in">3 kinds of targets: setup, start and stop.
+    <li class="fragment fade-in">The target will be read by corresponding nin command.
+    <li class="fragment fade-in">Each target have an array of actions.
+    <li class="fragment fade-in">Actions will executed one by one.
+    <li class="fragment fade-in">Each action is a <code>{ "type":..., "content": ... }</code>.
+    <li class="fragment fade-in">Type could be bash/grunt/forever, and content is a file path to your script.
+  </ul>
+</section>
+
+<section>
+  <h2>... more elaboration</h2>
+  <div class="fragment fade-in">
+    Go back the nin-example, the setup has 1 action, which is a bash action, and its script is
+    <pre><code data-trim class="bash">
+#op/setup.sh
+node_modules/rask/bin/rask gen log.json >etc/log.json
+    </code></pre>
+  </div>
+  <div class="fragment fade-in">
+    The start/stop also has 1 bash action, and the contents are
+    <pre><code data-trim class="bash">
+#op/start.sh
+node index.js &
+echo $! >var/server.pid
+    </code></pre>
+    <pre><code data-trim class="bash">
+#op/stop.sh
+kill `cat var/server.pid`
+    </code></pre>
+  </div>
+</section>
+
+<section>
+  <h2>yes, <a>nin</a> will ensure your common dirs</h2>
+  <p>In detail, they are</p>
+  <pre><code data-trim class="bash">
+~/nintest $ tree -L 3
+.
+├── etc
+│   └── nin-example -> /local/DevCamp/tmp/ne/node_modules/nin-example/etc
+├── log
+│   └── nin-example
+├── node_modules
+│   └── nin-example
+│       ├── log -> /local/DevCamp/tmp/ne/log/nin-example
+│       └── var -> /local/DevCamp/tmp/ne/var/nin-example
+└── var
+    └── nin-example
+  </code></pre>
+</section>
+
+<section>
+  <h2>and <a>nin</a> also supports complex scripts</h2>
+  <ul>
+    <li class="fragment fade-in">For setup target, nin supports grunt action, see <a href="https://github.com/liyu1981/nin-example/tree/grunt" target="_blank">the grunt branch</a> of nin-example for example.
+    <li class="fragment fade-in">For start/stop target, nin supports forever action, see <a href="https://github.com/liyu1981/nin-example/tree/forever" target="_blank">the forever branch</a> of nin-example for example.
+  </ul>
+  <br>
+  <br>
+  <br>
+  <p class="fragment fade-in"><small>and I need not to install grunt/forever by myself, nin covers them. :)</small></p>
+</section>
+
+<section>
+  <h2>So, test drive <a>nin</a> now!</h2>
+</section>
+
+<!-- end of all sections -->
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
