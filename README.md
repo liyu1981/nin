@@ -5,6 +5,8 @@ nin is **N**ode **IN**staller, the missing nodejs app deploy tool.
 
 nin tries to solve a trival-but-bother problem: **how to deploy your nodejs app ?**
 
+<iframe src="http://liyu1981.github.io/nin/slides/intro/index.html?embedded=true" width="100%" height="360"></iframe>
+
 ### The manual method
 
 When I manually deploy a nodejs app, I do
