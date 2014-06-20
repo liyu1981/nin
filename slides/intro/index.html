@@ -212,24 +212,24 @@ nin start nin-example
 
   Commands:
 
-    deploy <pkg>           Install your app.
-      > <pkg> can be any llegal npm pkg names.
+    deploy &lt;pkg&gt;           Install your app.
+      > &lt;pkg&gt; can be any llegal npm pkg names.
       > Ref https://www.npmjs.org/doc/cli/npm-install.html
 
-    install <pkg>          Install your app.
+    install &lt;pkg&gt;          Install your app.
       > This equals deploy then setup.
-      > <pkg> can be any llegal npm pkg names.
+      > &lt;pkg&gt; can be any llegal npm pkg names.
       > Ref https://www.npmjs.org/doc/cli/npm-install.html
 
-    setup <pkgname>        Setup your app.
-      > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/node_modules/
+    setup &lt;pkgname&gt;        Setup your app.
+      > &lt;pkgname&gt; is the pkg installed dir name, i.e., some name in &lt;cwd&gt;/node_modules/
 
-    start <pkgname>        Start your app.
-      > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/node_modules/
-      > pid file will write to var/<pkgname>
+    start &lt;pkgname&gt;        Start your app.
+      > &lt;pkgname&gt; is the pkg installed dir name, i.e., some name in &lt;cwd&gt;/node_modules/
+      > pid file will write to var/&lt;pkgname&gt;
 
-    stop <pkgname>         Stop your app.
-      > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/node_modules/
+    stop &lt;pkgname&gt;         Stop your app.
+      > &lt;pkgname&gt; is the pkg installed dir name, i.e., some name in &lt;cwd&gt;/node_modules/
 
     version                Show version info.
 
@@ -381,6 +381,10 @@ $(function() {
   window.addEventListener("mousedown", handleClick, false);
   window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
   function handleClick(e) {
+    if ($(e.target).parent().hasClass('controls')) {
+      // this controls, skip;
+      return;
+    }
     e.preventDefault();
     if(e.button === 0) Reveal.next();
     if(e.button === 2) Reveal.prev();
