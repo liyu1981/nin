@@ -16,7 +16,8 @@
     "url": "https://github.com/liyu1981/nin/issues"
   },
   "bin": {
-    "nin": "bin/nin"
+    "nin": "bin/nin",
+    "nin-forever": "node_modules/forever/bin/forever"
   },
   "dependencies": {
     "commander": "~2.2.0",
