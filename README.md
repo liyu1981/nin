@@ -39,6 +39,11 @@ Installation
 npm install -g nin
 ```
 
+or locally
+```bash
+curl https://raw.githubusercontent.com/liyu1981/nin/master/install.sh | sh
+```
+
 Dependencies
 ============
 
@@ -56,32 +61,32 @@ Command Line Summary
     deploy <pkg>           Install your app.
       > <pkg> can be any llegal npm pkg names.
       > Ref https://www.npmjs.org/doc/cli/npm-install.html
-    
+
     install <pkg>          Install your app.
       > This equals deploy then setup.
       > <pkg> can be any llegal npm pkg names.
       > Ref https://www.npmjs.org/doc/cli/npm-install.html
-    
+
     remove [options] <pkgname> Remove your app.
       > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/apps/
-    
+
     restart <pkgname>      restart your app.
       > This equals stop then start your app.
       > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/apps/
-    
+
     setup <pkgname>        Setup your app.
       > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/apps/
-    
+
     start <pkgname>        Start your app.
       > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/apps/
       > pid file will write to var/<pkgname>
-    
+
     stop <pkgname>         Stop your app.
       > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/apps/
-    
+
     update <pkgname>       Update your app.
       > <pkgname> is the pkg installed dir name, i.e., some name in <cwd>/apps/
-    
+
     version [options]      Show version info.
 
   Options:
