@@ -1,6 +1,6 @@
 {
   "name": "nin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Nodejs INstaller, the missing deploy tool for nodejs.",
   "repository": {
     "type": "git",
